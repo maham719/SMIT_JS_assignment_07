@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.3.6-dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         1. Write a program that takes a positive integer from user &
+// display the following in your browser.
+// a. number
+// b. round off value of the number
+// c. floor value of the number
+// d. ceil value of the number
+var positiveInteger = prompt("Enter a positive integer:");
+document.write("<h1 class='text-center'>Math Methods</h1>");
+document.write("<h2 class='text-center'>1. Positive Integer</h2>");
+if (positiveInteger !== null && !isNaN(positiveInteger) && Number(positiveInteger) > 0) {
+    var number = Number(positiveInteger);
+    document.write("<p class='fs-4 text-center'>Number: " + number + "</p><br>");
+    document.write("<h2 class='text-center'>Math.round() :</h2>");
+    document.write("<p class='fs-4 text-center'>Round off value: " + Math.round(number) + "</p><br>");
+    document.write("<h2 class='text-center'>Math.floor() :</h2>");
+    document.write("<p class='fs-4 text-center'>Floor value: " + Math.floor(number) + "</p><br>");
+    document.write("<h2 class='text-center'>Math.ceil() :</h2>");
+    document.write("<p class='fs-4 text-center'>Ceil value: " + Math.ceil(number) + "</p><br>");
+}
+
+// 2. Write a program that takes a negative floating point
+// number from user & display the following in your browser.
+// a. number
+// b. round off value of the number
+// c. floor value of the number
+// d. ceil value of the number
+var negativeInput = prompt("Enter a negative floating point number:");
+document.write("<h2 class='text-center'>2. Negative Floating Point Number</h2>");
+if (negativeInput !== null && !isNaN(negativeInput) && Number(negativeInput) < 0) {
+    var negativeNumber = Number(negativeInput);
+    document.write("<p class='fs-4 text-center'>Number: " + negativeNumber + "</p><br>");
+    document.write("<h2 class='text-center'>Math.round() :</h2>");
+    document.write("<p class='fs-4 text-center'>Round off value: " + Math.round(negativeNumber) + "</p><br>");
+    document.write("<h2 class='text-center'>Math.floor() :</h2>");
+    document.write("<p class='fs-4 text-center'>Floor value: " + Math.floor(negativeNumber) + "</p><br>");
+    document.write("<h2 class='text-center'>Math.ceil() :</h2>");
+    document.write("<p class='fs-4 text-center'>Ceil value: " + Math.ceil(negativeNumber) + "</p><br>");
+}
+
+// 3. Write a program that displays the absolute value of a
+// number.
+// E.g. absolute value of -4 is 4 & absolute value of 5 is 5
+var absoluteInput = prompt("Enter a number:");
+document.write("<h2 class='text-center'>3. Absolute Value</h2>");
+document.write("<h2 class='fs-4 text-center'>Math.abs( ):</h2>");
+if (absoluteInput !== null && !isNaN(absoluteInput)) {
+    var absoluteNumber = Number(absoluteInput);
+    document.write("<p class='fs-4 text-center'>Absolute value of " + absoluteNumber + " is " + Math.abs(absoluteNumber) + "</p><br>");
+}
+// 4. Write a program that simulates a dice using random()
+// method of JS Math class. Display the value of dice in your
+// browser.:
+document.write("<h2 class='text-center'>4. Random Dice Value</h2>");
+document.write("<h2 class='fs-4 text-center'>Math.random() :</h2>");
+var diceValue=Math.floor(Math.random()*6)+1;
+document.write("<p class='fs-4 text-center'>Random dice value: " + diceValue + "</p><br>");
+
+// 5. Write a program that simulates a coin toss using random()
+// method of JS Math class. Display the value of coin in your
+// browser
+document.write("<h2 class='text-center'>5. Coin Toss</h2>");
+document.write("<h2 class='fs-4 text-center'>Math.random() :</h2>");
+var coinToss = Math.floor(Math.random() * 2);
+if(coinToss === 0) {
+    document.write("<p class='fs-4 text-center'>Random coin toss value: Heads</p><br>");
+} else {
+    document.write("<p class='fs-4 text-center'>Random coin toss value: Tails</p><br>");
+}
+// 6. Write a program that shows a random number between 1 and 100 in your browser.
+document.write("<h2 class='text-center'>6. Random Number Between 1 and 100</h2>");
+document.write("<h2 class='fs-4 text-center'>Math.random() :</h2>");
+var randomNumber = Math.floor(Math.random() * 100) + 1;
+document.write("<p class='fs-4 text-center'>Random number between 1 and 100: " + randomNumber + "</p><br>");
+// 7. Write a program that asks the user about his weight. Parse
+// the user input and display his weight in your browser.
+// Possible user inputs can be:
+// a. 50
+// b. 50kgs
+// c. 50.2kgs
+// d. 50.2kilograms
+var userWeight = prompt("Enter your weight (e.g., 50, 50kgs, 50.2kgs, 50.2kilograms):");
+document.write("<h2 class='text-center'>7. User Weight</h2>");
+if (userWeight !== null) {
+    var weightInKgs = parseFloat(userWeight);
+    if (isNaN(weightInKgs)) {
+        document.write("<p class='fs-4 text-center'>Invalid input. Please enter a valid weight.</p><br>");
+    } else {
+        document.write("<p class='fs-4 text-center'>The weight of user is: " + weightInKgs + " Kilograms</p><br>");
+    }
+}
+// 8. Write a program that stores a random secret number from
+// 1 to 10 in a variable. Ask the user to input a number
+// between 1 and 10. If the user input equals the secret
+// number, congratulate the user.
+var secretNumber = Math.floor(Math.random() * 10) + 1;
+var userGuess = prompt("Guess the secret number (between 1 and 10):");
+if (userGuess !== null) {
+    var guessedNumber = parseInt(userGuess);
+    if (guessedNumber === secretNumber) {
+        alert("Congratulations! You guessed the secret number: " + secretNumber + " correctly!");
+    } else if(guessedNumber <secretNumber){
+        alert("Your guess is too low. The secret number was: " + secretNumber);
+    }else if(guessedNumber > secretNumber) {
+        alert("Your guess is too high. The secret number was: " + secretNumber);
+    } else {
+        alert("Sorry! The secret number was: " + secretNumber);
+    }
+}
+</script>
+</body>
+</html>
